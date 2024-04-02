@@ -29,7 +29,7 @@
 
        01  FIN         PIC X       VALUES "N".
 
-       01  GUIONES     PIC X(80)   VALUES H"C4".
+       01  GUIONES     PIC X(80)   VALUES ALL "-".
 
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
@@ -68,15 +68,15 @@
            EXIT.
 
        MUESTRO-PANTALLA.
-           DISPLAY " "               LINE 1  COL 1 ERASE EOS
-                   "A.B.M. Clientes" LINE 3  COL 32
-                   GUIONES.          LINE 4  COL 1
-                   "ID Cliente : "   LINE 10 COL 10
-                   "Nombre     : "   LINE 12 COL 10
-                   "Direccion  : "   LINE 14 COL 10
-                   "Cod.Postal : "   LINE 16 COL 10
-                   "Categoria  : "   LINE 18 COL 10
-                   GUIONES.          LINE 22 COL 1.
+           DISPLAY " "                   LINE 1  COL 1 ERASE EOS
+                   "A.B.M. Clientes"     LINE 3  COL 32
+                   GUIONES               LINE 4  COL 1
+                   "ID Cliente : "       LINE 10 COL 10
+                   "01. Nombre     : "   LINE 12 COL 10
+                   "02. Direccion  : "   LINE 14 COL 10
+                   "03. Cod.Postal : "   LINE 16 COL 10
+                   "04. Categoria  : "   LINE 18 COL 10
+                   GUIONES               LINE 22 COL 1.
 
 
        END PROGRAM "EJEMPLO".
