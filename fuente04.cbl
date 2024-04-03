@@ -13,12 +13,12 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
 
-               COPY "./sel/clientes.sel"
+       COPY "./clientes.sel".
 
        DATA DIVISION.
        FILE SECTION.
 
-               COPY "./fd/clientes.fd"
+       COPY "./clientes.fd".
 
        WORKING-STORAGE SECTION.
 
@@ -46,11 +46,10 @@
        ABRO-ARCHIVO.
            OPEN I-O CLIENTES.
            IF ST-SIC > "07"
-              STRING "Error al abrir Clientes " ST-SIC DELIMITED BY SIZE
-                  INTO MENSAJE
+              STRING "Error al abrir Clientes " ST-FILE
+                   DELIMITED BY SIZE INTO MENSAJE
               DISPLAY  MENSAJE LINE 10 COL 20
               MOVE "S" TO FIN.
-
 
        CIERRO-ARCHIVO.
            CLOSE CLIENTES.
@@ -71,7 +70,7 @@
            DISPLAY " "                   LINE 1  COL 1 ERASE EOS
                    "A.B.M. Clientes"     LINE 3  COL 32
                    GUIONES               LINE 4  COL 1
-                   "ID Cliente : "       LINE 10 COL 10
+                   "ID Cliente     : "   LINE 10 COL 10
                    "01. Nombre     : "   LINE 12 COL 10
                    "02. Direccion  : "   LINE 14 COL 10
                    "03. Cod.Postal : "   LINE 16 COL 10
